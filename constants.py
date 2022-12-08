@@ -2,7 +2,7 @@
 hours = 8
 
 #business days
-days = 100
+days = 20
 
 #total working time (hours)
 total_time = hours * days
@@ -13,8 +13,11 @@ wood_capacity = 500
 initial_wood = 200
 
     #electronic
-electronic_capacity = 100
-initial_electronic = 60
+singles_capacity = 140
+initial_singles = 100
+
+humbs_capacity = 100
+initial_humbs = 60
 
     #paint
 body_pre_paint_capacity = 60
@@ -24,6 +27,8 @@ neck_post_paint_capacity = 120
     
     #dispatch
 dispatch_capacity = 500
+dispatch_capacity_s = 250
+dispatch_capacity_h = 250
 
 
 #employees per activity
