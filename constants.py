@@ -2,7 +2,7 @@
 hours = 8
 
 #business days
-days = 20
+days = 5
 
 #total working time (hours)
 total_time = hours * days

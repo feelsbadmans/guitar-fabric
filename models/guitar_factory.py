@@ -80,7 +80,7 @@ class Guitar_Factory:
         global guitars_made, guitars_made_s, guitars_made_h
         yield env.timeout(0)
         while True:
-            if self.dispatch.level >= 50:
+            if self.dispatch.level >= 10:
                 print('Отгрузочный запас: {0}, звонок в магазин продажи гитар в день {1} час {2}'.format(
                     self.dispatch.level, int(env.now/8), env.now % 8))
                 print('----------------------------------')

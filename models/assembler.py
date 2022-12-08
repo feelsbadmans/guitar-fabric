@@ -1,12 +1,12 @@
 import random
 from constants import mean_ensam, std_ensam, num_ensam
-from random import randrange
 
 def assembler(env, guitar_factory):
     while True:
-        type = randrange(2)
+        type = random.randrange(5)
         el = guitar_factory.singles
         d = guitar_factory.dispatch_s
+        msg = "Хамбакер" if type % 2 == 1 else 'Сингл'
         
         if type % 2 == 1:
             el = guitar_factory.humbs
@@ -15,8 +15,16 @@ def assembler(env, guitar_factory):
         yield guitar_factory.body_post_paint.get(1)
         yield guitar_factory.neck_post_paint.get(1)
         yield el.get(2)
+        
+        
+        print('----------------------------------')
+        print('Гитара готова к сборке')
+        print(f'Сборка гитары со звукоснимателями типа "{msg}"')
+        
         assembling_time = max(random.gauss(mean_ensam, std_ensam), 1)
+        
         yield env.timeout(assembling_time)
+        print('Гитара собрана!')
         yield guitar_factory.dispatch.put(1)
         yield d.put(1)
 
