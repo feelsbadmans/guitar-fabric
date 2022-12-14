@@ -1,61 +1,49 @@
-#working hours
-hours = 8
+labels = {
+    'bodies': 'Корпусы перед покраской',
+    'necks': 'Грифы перед покраской',
+    'bodies_painted': 'Корпусы после покраски',
+    'necks_painted': 'Грифы после покраски',
+    'humbs': 'Гитары с хамбакерами',
+    'singles': 'Гитары с синглами',
+    'guitars_made': 'Гитар произведено',
+    'guitars_made_s': 'С синглами ',
+    'guitars_made_h': 'С хамбакерами ',
+    'guitars_store': 'Гитар отправлено в магазин',
+    'guitars_store_s': 'С синглами',
+    'guitars_store_h': 'С хамбакерами',
+    'body_pre_paint': 'Корпусы перед покраской',
+    'neck_pre_paint': 'Грифы перед покраской',
+    'body_post_paint': 'Корпусы после покраски',
+    'neck_post_paint': 'Грифы после покраски',
+    'dispatch': 'Гитары к отправке в магазин'
+}
 
-#business days
-days = 5
-
-#total working time (hours)
-total_time = hours * days
-
-#containers
-    #wood
-wood_capacity = 500
-initial_wood = 200
-
-    #electronic
-singles_capacity = 140
-initial_singles = 100
-
-humbs_capacity = 100
-initial_humbs = 60
-
-    #paint
-body_pre_paint_capacity = 60
-neck_pre_paint_capacity = 60
-body_post_paint_capacity = 120
-neck_post_paint_capacity = 120
-    
-    #dispatch
-dispatch_capacity = 500
-dispatch_capacity_s = 250
-dispatch_capacity_h = 250
-
-
-#employees per activity
-    #body
-num_body = 2
-mean_body = 1
-std_body = 0.1
-
-    #neck
-num_neck = 1
-mean_neck = 1
-std_neck = 0.2
-
-    #paint
-num_paint = 3
-mean_paint = 3
-std_paint = 0.3
-
-    #ensambling
-num_ensam = 2
-mean_ensam = 1
-std_ensam = 0.2
-
-
-#critical levels
-    #critical stock should be 1 business day greater than supplier take to come
-wood_critial_stock = (((8/mean_body) * num_body +
-                      (8/mean_neck) * num_neck) * 3) #2 days to deliver + 1 marging
-
-electronic_critical_stock = (8/mean_ensam) * num_ensam * 2 #1 day to deliver + 1 marging
+default_constants = {
+        'hours': 8,
+        'days': 10,
+        'wood_capacity': 500,
+        'initial_wood': 200,
+        'singles_capacity': 140,
+        'initial_singles': 100,
+        'humbs_capacity': 100,
+        'initial_humbs': 60,
+        'body_pre_paint_capacity': 60,
+        'neck_pre_paint_capacity': 60,
+        'body_post_paint_capacity': 120,
+        'neck_post_paint_capacity': 120,
+        'dispatch_capacity': 500,
+        'dispatch_capacity_s': 250,
+        'dispatch_capacity_h': 250,
+        'num_body': 2,
+        'mean_body': 1,
+        'std_body': 0.1,
+        'num_neck': 1,
+        'mean_neck': 1,
+        'std_neck': 0.2,
+        'num_paint': 3,
+        'mean_paint': 3,
+        'std_paint': 0.3,
+        'num_ensam': 4,
+        'mean_ensam': 1,
+        'std_ensam': 0.2,
+    }
