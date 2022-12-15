@@ -130,6 +130,7 @@ class GuitarFactory:
 def factory_simulation(constants):
     env = simpy.Environment()
     guitar_factory = GuitarFactory(env, constants)
+    global guitars_made, guitars_made_h , guitars_made_s
     
     days_info_list = []
     days_info_dict = {
@@ -192,6 +193,10 @@ def factory_simulation(constants):
         'guitars_store_s': guitars_made_s,
         'guitars_store_h': guitars_made_h,
     }
+    
+    guitars_made_h = 0 
+    guitars_made_s = 0 
+    guitars_made = 0
     
     
     return {
